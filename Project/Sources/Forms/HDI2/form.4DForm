@@ -1,0 +1,353 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 1000,
+	"windowMinHeight": 600,
+	"width": 1000,
+	"height": 800,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 960,
+					"height": 760,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "TabControl",
+					"dataSourceTypeHint": "arrayText",
+					"labels": [
+						"Page 1",
+						"Page 2"
+					],
+					"action": "GotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"btnTrace": {
+					"type": "checkbox",
+					"top": 741,
+					"left": 610,
+					"width": 183,
+					"height": 22,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "Form:C1466.trace",
+					"text": "Trace code",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"btnHtml": {
+					"type": "button",
+					"top": 741,
+					"left": 40,
+					"width": 180,
+					"height": 23,
+					"sizingY": "move",
+					"text": "Export to HTML",
+					"focusable": false,
+					"method": "ObjectMethods/btnHtml.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Button": {
+					"type": "button",
+					"top": 741,
+					"left": 867,
+					"width": 95,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Demo",
+					"focusable": false,
+					"method": "ObjectMethods/Button.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text10": {
+					"type": "text",
+					"top": 160,
+					"left": 100,
+					"width": 800,
+					"height": 120,
+					"textAlign": "left",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "4D Write Pro documents can hold many types of images.\rThe two main kinds are inline and anchored images."
+				},
+				"Text4": {
+					"type": "text",
+					"top": 315,
+					"left": 240,
+					"width": 600,
+					"height": 120,
+					"sizingX": "move",
+					"textAlign": "left",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "Inline pictures are part of the text, their size can be ajusted but  their position depends on the text located before them."
+				},
+				"Text11": {
+					"type": "text",
+					"top": 470,
+					"left": 240,
+					"width": 600,
+					"height": 120,
+					"textAlign": "left",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "Anchored pictures do not depend on the text. They can be located anywhere in front of or behind the text. They can also be repeated (or not) on other pages."
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea": {
+					"type": "write",
+					"top": 70,
+					"left": 40,
+					"width": 550,
+					"height": 650,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"zoom": 75,
+					"showPageFrames": true,
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"Text5": {
+					"type": "text",
+					"top": 75,
+					"left": 620,
+					"width": 330,
+					"height": 147,
+					"sizingX": "move",
+					"fontWeight": "bold",
+					"text": "This text contains both kinds of pictures, inline and anchored.\r\rThey can both be deleted using the new command, WP DELETE PICTURE."
+				},
+				"Text2": {
+					"type": "text",
+					"top": 290,
+					"left": 670,
+					"width": 250,
+					"height": 50,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove all the pictures that do not belong to the text itself (they can be located either behind or in front of the text)"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 390,
+					"left": 670,
+					"width": 250,
+					"height": 40,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove all pictures that belong to the body."
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Remove inline pictures from body",
+					"top": 354,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Remove  all the anchored pictures",
+					"top": 260,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 480,
+					"left": 670,
+					"width": 250,
+					"height": 40,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove all pictures that belong to the header."
+				},
+				"Button3": {
+					"type": "button",
+					"text": "Remove inline pictures from header",
+					"top": 441,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Button4": {
+					"type": "button",
+					"top": 741,
+					"left": 497,
+					"width": 95,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Reload",
+					"focusable": false,
+					"method": "ObjectMethods/Button4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text6": {
+					"type": "text",
+					"top": 590,
+					"left": 670,
+					"width": 250,
+					"height": 40,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove all inline pictures from the document, including the header and footer."
+				},
+				"Button5": {
+					"type": "button",
+					"text": "Remove all inline pictures from document",
+					"top": 551,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button5.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Text7": {
+					"type": "text",
+					"top": 680,
+					"left": 670,
+					"width": 250,
+					"height": 40,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove all pictures that belong to the document."
+				},
+				"Button6": {
+					"type": "button",
+					"text": "Remove all pictures at once!",
+					"top": 641,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button6.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"Text8": {
+					"type": "text",
+					"top": 200,
+					"left": 670,
+					"width": 250,
+					"height": 50,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "This action will remove the anchored picture whose ID is \"Logo\""
+				},
+				"Button7": {
+					"type": "button",
+					"text": "Remove the Logo (anchored picture)",
+					"top": 170,
+					"left": 622,
+					"width": 325,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button7.4dm",
+					"focusable": false,
+					"sizingX": "move"
+				},
+				"reloadIcon": {
+					"type": "picture",
+					"top": 735,
+					"left": 460,
+					"width": 32,
+					"height": 32,
+					"picture": "/RESOURCES/Images/RightArrow.png",
+					"pictureFormat": "scaled",
+					"visibility": "hidden",
+					"sizingX": "move",
+					"sizingY": "move"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
